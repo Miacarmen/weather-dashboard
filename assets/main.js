@@ -1,18 +1,30 @@
 // GIVEN a weather dashboard with form inputs
+var currWeather = document.querySelector('current-weatther');
+var time = document.getElementById('time');
+var date = document.getElementById('date');
+
+var cityStats = document.getElementById('stats');
+var statItem = document.querySelectorAll('stat-item');
+var currDate = document.querySelector('current-date');
+var currTemp = document.querySelector('current-temp');
+var currHumidity = document.querySelector('current-humidity');
+var currWind = document.querySelector('current-wind');
+var currUv = document.querySelector('current-uv-index');
 
 
+var locationContainer = document.querySelector('location-container');
+var timeZone = document.getElementById('time-zone');
+var country = document.getElementById('country');
 
-var citySearch = document.querySelector('.searchCity');
-var searchBtn = document.querySelector('.btn-primary');
-var input = document.querySelectorAll('.form-control');
-var cityList = document.querySelectorAll('.list-group');
-var cityName = document.querySelectorAll('.list-group-item');
-var today = document.querySelector('.date');
-console.log(cityName);
+var forecastContainer = document.querySelector('forecast-container');
+var today = document.getElementById('current-stats');
+var currentDay = document.querySelector('current-day');
+var amTemp = document.querySelector('am-temp');
+var pmTemp = document.querySelector('pm-temp');
 
-
-
-
+var forcast = document.getElementById('weather-forecast');
+var forecastItem = document.querySelectorAll('forecast-item');
+var day = document.querySelectorAll('day');
 
 
 
