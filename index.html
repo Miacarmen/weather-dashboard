@@ -13,92 +13,32 @@
 
 <body>
 
-    <nav class="navbar navbar-light bg-dark justify-content-center">
-        <span class="navbar-brand mb-0 h1 text-white">Weather Dashboard</span>
-    </nav>
-
-
 
     <div class="container">
+        <div class="current-weather">
 
-        <div class="row">
-            <!-- form inputs -->
-            <div class="col col-sm-5">
-                <form class="searchCity">
-                    <input class="form-control form-control-lg" type="text" placeholder="Enter a city">
-                    <button class="btn btn-primary" type="button"><i class="fa-solid fa-magnifying-glass"></i>Search</button>
-                </form>
-
-                <div class="list-group">
-                    <button type="button" class="list-group-item list-group-item-action active">
-                      City
-                    </button>
-                    <button type="button" class="list-group-item list-group-item-action">City</button>
-                    <button type="button" class="list-group-item list-group-item-action">City</button>
-                    <button type="button" class="list-group-item list-group-item-action">City</button>
-
-                </div>
+            <div class="dateTime-container">
+                <div class="time" id="time"></div>
+                <div class="date" id="date"></div>
             </div>
 
-
-            <div class="col col-sm-7 city-stats">
-
-                <h2 class="city">City</h2>
-                <p class="date">Current Date</p>
-                <p class="temp">Temperature</p>
-                <p class="humidity">Humidity</p>
-                <p class="wind">Wind Speed</p>
-                <p class="uv-index">UV Index</p>
-
-
-
-
-
-                <!-- weather blocks -->
-                <div class="row container">
-                    <div class="card text-white bg-primary mb-3" style="max-width: 18rem;">
-                        <div class="card-header">Monday</div>
-                        <div class="card-body">
-                            <h5 class="card-title">Forecast</h5>
-                            <p class="card-text">Temperature</p>
-                        </div>
-                    </div>
-
-                    <div class="card text-white bg-primary mb-3" style="max-width: 18rem;">
-                        <div class="card-header">Tuesday</div>
-                        <div class="card-body">
-                            <h5 class="card-title">Forecast</h5>
-                            <p class="card-text">Temperature</p>
-                        </div>
-                    </div>
-
-                    <div class="card text-white bg-primary mb-3" style="max-width: 18rem;">
-                        <div class="card-header">Wednesday</div>
-                        <div class="card-body">
-                            <h5 class="card-title">Forecast</h5>
-                            <p class="card-text">Temperature</p>
-                        </div>
-                    </div>
-
-                    <div class="card text-white bg-primary mb-3" style="max-width: 18rem;">
-                        <div class="card-header">Thursday</div>
-                        <div class="card-body">
-                            <h5 class="card-title">Forecast</h5>
-                            <p class="card-text">Temperature</p>
-                        </div>
-                    </div>
-
-                    <div class="card text-white bg-primary mb-3" style="max-width: 18rem;">
-                        <div class="card-header">Friday</div>
-                        <div class="card-body">
-                            <h5 class="card-title">Forecast</h5>
-                            <p class="card-text">Temperature</p>
-                        </div>
-                    </div>
+            <div class="current-stats" id="stats">
+                <div class="">
+                    <h2 class="city">City</h2>
+                    <p class="date">Current Date</p>
+                    <p class="temp">Temperature</p>
+                    <p class="humidity">Humidity</p>
+                    <p class="wind">Wind Speed</p>
+                    <p class="uv-index">UV Index</p>
                 </div>
             </div>
         </div>
     </div>
+
+
+
+
+
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
