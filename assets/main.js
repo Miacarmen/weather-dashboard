@@ -55,3 +55,15 @@ console.log(cityName);
 
 // WHEN I click on a city in the search history
 // THEN I am again presented with current and future conditions for that city
+var requestURL = 'https://api.openweathermap.org/data/2.5/onecall?lat=33.44&lon=-94.04&exclude=hourly,daily&appid={7d4a585401a3f14d62935effdc6eb514}';
+
+var getApi = function() {
+    fetch(requestUrl)
+        .then(function(response) {
+            console.log('response', response);
+            return response.json();
+        })
+        .then(function(data) {
+            console.log(data);
+        });
+}
