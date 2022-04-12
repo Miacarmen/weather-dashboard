@@ -27,7 +27,7 @@ body {
 }
 
 .date-container {
-    padding-bottom: 15px;
+    padding-bottom: 10px;
     padding-top: 10px;
 }
 
@@ -36,7 +36,7 @@ body {
 
 .search-container {
     color: var(--text_light);
-    padding-bottom: 15px;
+    padding-bottom: 10px;
 }
 
 .search-container form {
@@ -45,10 +45,9 @@ body {
 }
 
 .search-container form input {
-    font-size: 2rem;
-    height: 40px;
-    padding: 5px 5px 10px;
-    border-bottom: 1px solid;
+    font-size: 20px;
+    height: 50px;
+    padding: 10px;
 }
 
 .search-container form input::placeholder {
@@ -81,8 +80,15 @@ body {
     background: var(--text_med);
 }
 
+.current-weather-container {
+    padding-bottom: 20px;
+}
+
 .forecast-container {
     padding-bottom: 25px;
+    padding: 10px;
+    color: var(--text_light);
+    background: var(--text_med);
 }
 
 

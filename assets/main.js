@@ -27,7 +27,7 @@ var getApi = function(city) {
             document.querySelector('.city').textContent = data.name;
             document.querySelector('.temp').textContent = 'Temperature: ' + data.main.temp;
             document.querySelector('.wind').textContent = 'Wind Speed: ' + data.wind.speed;
-            document.querySelector('.humidity').textContent = 'Humidity ' + data.main.humidity;
+            document.querySelector('.humidity').textContent = 'Humidity: ' + data.main.humidity;
             document.querySelector('.uvIndex').textContent = 'UV Index: ' + data.main.temp.uvi;
             // call forecast function to get searched City's forecast data
             forecast(data.coord.lat, data.coord.lon);
