@@ -15,25 +15,25 @@
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment.min.js"></script>
 </head>
 
-<body class="min-100-vh flex-column">
-    <nav class="navbar navbar-dark p-5 text-center">
-        <div class="container">
-            <h1 class="app-title">Weather Forcast</h1>
-        </div>
-    </nav>
+<body class="min-100-vh">
 
     <div class="container search-container">
-        <div class="search-content card">
-            <p class="search-txt">Enter a City to Get the Weather</p>
-            <input id="searchInput" class="formInput" type="text" placeholder="Enter City">
-            <button class="btn btn-primary" id="searchBtn" type="submit">Search</button>
+        <div class="container">
+            <h1 class="row navbar text-center">Weather Forecast</h1>
+            <form>
+                <input id="searchInput" class="formInput" type="text" placeholder="Search for a City">
+                <button class="btn btn-primary" id="searchBtn" type="submit">Search</button>
+            </form>
         </div>
-        <div class="search-history"></div>
+
+        <div class="search-history">
+            <ul class="cities"></ul>
+        </div>
     </div>
 
 
     <div class="container date-container">
-        <div class="date" id="dateTime"></div>
+        <div class="date"><strong>Today is:</strong><br> <span class="text-monospace" id="dateTime"></span></div>
     </div>
 
 
@@ -46,11 +46,11 @@
     </div>
 
     <div class="container forecast-container">
-        <div class="forecast-head">5 day forecast</div>
-        <div class="for-temp"></div>
-        <div class="for-wind">Wind Speed</div>
-        <div class="for-humidity">Humidity</div>
-        <div class="for-uvIndex">UV Index</div>
+        <div class="forecast-head">5 Day Forecast</div>
+        <div class="for-temp">Temperature:</div>
+        <div class="for-wind">Wind Speed:</div>
+        <div class="for-humidity">Humidity:</div>
+        <div class="for-uvIndex">UV Index:</div>
     </div>
 
 

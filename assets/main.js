@@ -2,10 +2,9 @@ var apiKey = "7d4a585401a3f14d62935effdc6eb514";
 
 // Function to get current date
 var dateTime = document.querySelector('#dateTime');
-var dateDisplay = document.querySelector('.date-container');
 
 setInterval(function() {
-    dateTime.textContent = 'Today is: ' + moment().format('dddd, MMMM Do YYYY, h:mm:ss a');
+    dateTime.textContent = moment().format('dddd, MMMM Do YYYY, h:mm:ss a');
 }, 100);
 
 

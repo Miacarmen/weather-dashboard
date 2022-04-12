@@ -1,23 +1,106 @@
- .container {
-     background-color: grey;
- }
- 
- .row {
-     background-color: lavenderblush;
- }
- 
- .col {
-     background-color: lightblue;
- }
- /* Small devices (landscape phones, 576px and up) */
- 
- @media (min-width: 576px) {}
- /* Medium devices (tablets, 768px and up) */
- 
- @media (min-width: 768px) {}
- /* Large devices (desktops, 992px and up) */
- 
- @media (min-width: 992px) {}
- /* Extra large devices (large desktops, 1200px and up) */
- 
- @media (min-width: 1200px) {}
+:root {
+    --bg_main: #0a1f44;
+    --text_light: #fff;
+    --text_med: #53627c;
+    --text_dark: #1e2432;
+    --orange: #ff8c00;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+body {
+    background-color: var(--text_light);
+    color: var(--text_light);
+    padding: 70px;
+}
+
+.container {
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 15px;
+    background: var(--bg_main);
+}
+
+.date-container {
+    padding-bottom: 15px;
+    padding-top: 10px;
+}
+
+
+/* Search Container */
+
+.search-container {
+    color: var(--text_light);
+    padding-bottom: 15px;
+}
+
+.search-container form {
+    display: flex;
+    align-items: center;
+}
+
+.search-container form input {
+    font-size: 2rem;
+    height: 40px;
+    padding: 5px 5px 10px;
+    border-bottom: 1px solid;
+}
+
+.search-container form input::placeholder {
+    color: var(--text_dark);
+    font-size: 25px;
+}
+
+.search-container form button {
+    font-weight: bold;
+    margin-left: 15px;
+}
+
+.search-container form button:hover {
+    background: var(--orange);
+}
+
+.current-weather-container .temp {
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.current-weather-container .city {
+    font-weight: bold;
+}
+
+.current-weather-container .city {
+    padding: 10px;
+    border-radius: 30px;
+    color: var(--text_light);
+    background: var(--text_med);
+}
+
+.forecast-container {
+    padding-bottom: 25px;
+}
+
+
+/* Small devices (landscape phones, 576px and up) */
+
+@media (min-width: 576px) {}
+
+
+/* Medium devices (tablets, 768px and up) */
+
+@media (min-width: 768px) {}
+
+
+/* Large devices (desktops, 992px and up) */
+
+@media (min-width: 992px) {}
+
+
+/* Extra large devices (large desktops, 1200px and up) */
+
+@media (min-width: 1200px) {}
