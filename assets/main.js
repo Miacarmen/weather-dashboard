@@ -1,31 +1,44 @@
-// GIVEN a weather dashboard with form inputs
-var currWeather = document.querySelector('current-weatther');
-var time = document.getElementById('time');
-var date = document.getElementById('date');
+var apiKey = "7d4a585401a3f14d62935effdc6eb514";
 
-var cityStats = document.getElementById('stats');
-var statItem = document.querySelectorAll('stat-item');
-var currDate = document.querySelector('current-date');
-var currTemp = document.querySelector('current-temp');
-var currHumidity = document.querySelector('current-humidity');
-var currWind = document.querySelector('current-wind');
-var currUv = document.querySelector('current-uv-index');
+// function to get current date
+var dateTime = document.querySelector('#dateTime');
+var dateDisplay = document.querySelector('.date-container');
+
+setInterval(function() {
+    dateTime.textContent = moment().format('dddd, MMMM Do YYYY, h:mm:ss a');
+}, 100);
 
 
-var locationContainer = document.querySelector('location-container');
-var timeZone = document.getElementById('time-zone');
-var country = document.getElementById('country');
 
-var forecastContainer = document.querySelector('forecast-container');
-var today = document.getElementById('current-stats');
-var currentDay = document.querySelector('current-day');
-var amTemp = document.querySelector('am-temp');
-var pmTemp = document.querySelector('pm-temp');
 
-var forcast = document.getElementById('weather-forecast');
-var forecastItem = document.querySelectorAll('forecast-item');
-var day = document.querySelectorAll('day');
 
+// Function to get user current location
+// get current location
+// get temperature for current location
+// get humidity for current location
+// get wind speed for current location
+// get UV index for current location
+// API requests
+var userLocation = function() {
+    navigator.geolocation.getCurrentPosition(function(success) {
+        console.log(success);
+    })
+}
+
+
+const queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + userLocation + "&units=imperial&appid=" + APIKey;
+
+
+var getApi = function() {
+    fetch(queryUrl)
+        .then(function(response) {
+            console.log('response', response);
+            return response.json();
+        })
+        .then(function(data) {
+            console.log(data);
+        });
+}
 
 
 // WHEN I search for a city
@@ -43,18 +56,6 @@ var day = document.querySelectorAll('day');
 // WHEN I view current weather conditions for that city
 // THEN I am presented with the city name, the date, an icon representation of weather conditions, the temperature, the humidity, the wind speed, and the UV index
 
-// get current date
-// moment.js
-// moment().format('MMMM Do YYYY);
-
-
-// get current location
-// get temperature for current location
-// get humidity for current location
-// get wind speed for current location
-// get UV index for current location
-// API requests
-
 
 
 // WHEN I view the UV index
@@ -67,15 +68,3 @@ var day = document.querySelectorAll('day');
 
 // WHEN I click on a city in the search history
 // THEN I am again presented with current and future conditions for that city
-var requestURL = 'https://api.openweathermap.org/data/2.5/onecall?lat=33.44&lon=-94.04&exclude=hourly,daily&appid={7d4a585401a3f14d62935effdc6eb514}';
-
-var getApi = function() {
-    fetch(requestUrl)
-        .then(function(response) {
-            console.log('response', response);
-            return response.json();
-        })
-        .then(function(data) {
-            console.log(data);
-        });
-}
