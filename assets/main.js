@@ -15,6 +15,7 @@ var getApi = function(city) {
     // API request for searched city
     var queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&units=imperial&appid=" + apiKey;
 
+
     fetch(queryURL)
         .then(function(response) {
             console.log('response', response);
@@ -24,13 +25,14 @@ var getApi = function(city) {
         // current.temp, current.humidity, current.wind_speed, current.uvi
         .then(function(data) {
             console.log(data);
+            forecast(data.coord.lat, data.coord.lon);
             document.querySelector('.city').textContent = data.name;
             document.querySelector('.temp').textContent = 'Temperature: ' + data.main.temp;
             document.querySelector('.wind').textContent = 'Wind Speed: ' + data.wind.speed;
             document.querySelector('.humidity').textContent = 'Humidity: ' + data.main.humidity;
-            document.querySelector('.uvIndex').textContent = 'UV Index: ' + data.main.temp.uvi;
+            // document.querySelector('.uvIndex').textContent = 'UV Index: ' + current.uvi;
             // call forecast function to get searched City's forecast data
-            forecast(data.coord.lat, data.coord.lon);
+
         });
 }
 
@@ -91,11 +93,13 @@ function forecast(lat, lon) {
         })
         .then(function(data) {
             console.log(data);
-            // for (var i = 1; i <= 5; i++){} 
-            // forcastContainer.querySelector('.for-temp').textContent = 'Temperature: ' + data.daily[i].temp;
-            // forcastContainer.querySelector('.for-wind');
-            // forcastContainer.querySelector('.for-humidity');
-            // forcastContainer.querySelector('.for-uvIndex');
+
+            forecastContainer.querySelector('.for-temp').textContent = 'Temperature: ' + data.daily[1].temp.day;
+            forecastContainer.querySelector('.for-wind').textContent = 'Wind Speed: ' + data.daily[1].wind_speed;
+            forecastContainer.querySelector('.for-humidity').textContent = 'Humidity: ' + data.daily[1].humidity;
+            forecastContainer.querySelector('.for-uvIndex').textContent = 'UV Index: ' + data.daily[1].uvi;
+
+
             // for loop to display only 5 days
             // create forecast cards inside loop
             // append card to html
