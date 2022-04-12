@@ -1,18 +1,4 @@
 var apiKey = "7d4a585401a3f14d62935effdc6eb514";
-var queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&units=imperial&appid=" + APIKey;
-
-var getApi = function(city) {
-    fetch(queryUrl)
-        .then(function(response) {
-            console.log('response', response);
-            return response.json();
-        })
-        .then(function(data) {
-            console.log(data);
-        });
-}
-
-
 
 // Function to get current date
 var dateTime = document.querySelector('#dateTime');
@@ -25,14 +11,51 @@ setInterval(function() {
 
 
 
+var getApi = function(city) {
+    var queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&units=imperial&appid=" + apiKey;
+
+    fetch(queryURL)
+        .then(function(response) {
+            console.log('response', response);
+            return response.json();
+        })
+        .then(function(data) {
+            console.log(data);
+            document.querySelector('.city').textContent = data.name;
+            document.querySelector('.temp').textContent = 'Temperature: ' + data.main.temp;
+            forcast(data.coord.lat, data.coord.lon);
+        });
+}
+
+
+
 // function to handle input submission
 var formInput = document.querySelector('.formInput');
 var searchBtn = document.querySelector('#searchBtn');
 
+// callback Fn
+searchBtn.addEventListener('click', function(event) {
+    // prevent refresh default
+    event.preventDefault();
+    var citySearch = formInput.value;
+    console.log(citySearch);
+    getApi(citySearch);
+
+    // create list item 'city' as button, append
+    // add onClick to button that grabs txt from btn and runs  getApi function, hand it txt from button
+
+    // local storage
+});
+
+// create onClick function for created li button above, here
+
 
 // Function to get searched city stats
 // make API request weather for searched city
+// lat, lon, timezone?
 // THEN then display current and future temp, humiditiy, wind speed, uv index
+// current.temp, current.humidity, current.wind_speed, current.uvi
+
 
 // onClick of searchBtn that city is added to the search history displayed as a 'button' 
 
@@ -42,7 +65,7 @@ function getSearchedCity() {
 }
 
 // WHEN I view current weather conditions for that city
-// THEN I am presented with the city name, the date, an icon representation of weather conditions, the temperature, the humidity, the wind speed, and the UV index
+// THEN I am presented with the city name, the date, an icon (current.weather.icon OR daily.weather.icon)  representation of weather conditions, the temperature, the humidity, the wind speed, and the UV index
 
 
 
@@ -58,8 +81,20 @@ var forcastContainer = document.querySelector('.forcast-container'),
     futureUV = forcastContainer.querySelector('.for-uvIndex');
 
 
-function forcast() {
+function forcast(lat, lon) {
+    var queryUrl = 'https://api.openweathermap.org/data/2.5/onecall?lat=' + lat + '&lon=' + lon + '&exclude=minutely,hourly,alerts&units=imperial&appid=' + apiKey;
 
+    fetch(queryUrl)
+        .then(function(response) {
+            console.log('response', response);
+            return response.json();
+        })
+        .then(function(data) {
+            console.log(data);
+            // for loop to display only 5 days
+            // create forecast cards inside loop
+            // append card to html
+        })
 }
 
 
