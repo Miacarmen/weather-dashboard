@@ -15,17 +15,17 @@
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment.min.js"></script>
 </head>
 
-<body>
-    <nav class="navbar navbar-dark mb3">
+<body class="min-100-vh flex-column">
+    <nav class="navbar navbar-dark p-5 text-center">
         <div class="container">
-            <h1 class="title">Weather Forcast</h1>
+            <h1 class="app-title">Weather Forcast</h1>
         </div>
     </nav>
 
     <div class="container search-container">
-        <div class="search card">
+        <div class="search-content card">
             <p class="search-txt">Enter a City to Get the Weather</p>
-            <input id="searchLocation" class="formInput" type="text" placeholder="Enter City">
+            <input id="searchInput" class="formInput" type="text" placeholder="Enter City">
             <button class="btn btn-primary" id="searchBtn" type="submit">Search</button>
         </div>
     </div>
@@ -37,15 +37,17 @@
 
 
     <div class="container current-weather-container">
-        <div class="city">current city</div>
-        <div class="wind"></div>
-        <div class="humidity"></div>
-        <div class="temp"></div>
+        <div class="city">Current City</div>
+        <div class="temp">Temperature</div>
+        <div class="wind">Wind Speed</div>
+        <div class="humidity">Humidity</div>
     </div>
 
     <div class="container forcast-container">
-        <div class="city">5 day forecast</div>
-        <div class="temp"></div>
+        <div class="for-city">5 day forecast</div>
+        <div class="for-temp"></div>
+        <div class="for-wind">Wind Speed</div>
+        <div class="for-humidity">Humidity</div>
     </div>
 
 

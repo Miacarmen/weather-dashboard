@@ -1,35 +1,7 @@
 var apiKey = "7d4a585401a3f14d62935effdc6eb514";
+var queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&units=imperial&appid=" + APIKey;
 
-// function to get current date
-var dateTime = document.querySelector('#dateTime');
-var dateDisplay = document.querySelector('.date-container');
-
-setInterval(function() {
-    dateTime.textContent = moment().format('dddd, MMMM Do YYYY, h:mm:ss a');
-}, 100);
-
-
-
-
-
-// Function to get user current location
-// get current location
-// get temperature for current location
-// get humidity for current location
-// get wind speed for current location
-// get UV index for current location
-// API requests
-var userLocation = function() {
-    navigator.geolocation.getCurrentPosition(function(success) {
-        console.log(success);
-    })
-}
-
-
-const queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + userLocation + "&units=imperial&appid=" + APIKey;
-
-
-var getApi = function() {
+var getApi = function(city) {
     fetch(queryUrl)
         .then(function(response) {
             console.log('response', response);
@@ -41,30 +13,71 @@ var getApi = function() {
 }
 
 
-// WHEN I search for a city
-// THEN I am presented with current and future conditions for that city and that city is added to the search history
 
-// onClick of searchBtn add new button to top of list-group displaying that city name
-// API request weather for searched city
-// update col-sm-7 city-stats to those of the input city
-// update 5 day forcast blocks for that city
+// Function to get current date
+var dateTime = document.querySelector('#dateTime');
+var dateDisplay = document.querySelector('.date-container');
 
-// onClick of each list-group item, display clicked in city-stats
+setInterval(function() {
+    dateTime.textContent = moment().format('dddd, MMMM Do YYYY, h:mm:ss a');
+}, 100);
 
 
+
+
+// function to handle input submission
+var formInput = document.querySelector('.formInput');
+var searchBtn = document.querySelector('#searchBtn');
+
+
+// Function to get searched city stats
+// make API request weather for searched city
+// THEN then display current and future temp, humiditiy, wind speed, uv index
+
+// onClick of searchBtn that city is added to the search history displayed as a 'button' 
+
+
+function getSearchedCity() {
+
+}
 
 // WHEN I view current weather conditions for that city
 // THEN I am presented with the city name, the date, an icon representation of weather conditions, the temperature, the humidity, the wind speed, and the UV index
 
 
 
+
+
+
+// FORECAST
+// daily.temp, daily.humidity, daily.wind_speed, daily.uvi
+var forcastContainer = document.querySelector('.forcast-container'),
+    futureTemp = forcastContainer.querySelector('.for-temp'),
+    futureWind = forcastContainer.querySelector('.for-wind'),
+    futureHumidity = forcastContainer.querySelector('.for-humidity'),
+    futureUV = forcastContainer.querySelector('.for-uvIndex');
+
+
+function forcast() {
+
+}
+
+
+
+// WHEN I click on a city in the search history
+// THEN I am again presented with current and future conditions for that city
+function clickedCity() {
+    // onClick of each list-group item, display clicked in city-stats
+}
+
+
+
+function uvIndexStats() {
+
+}
 // WHEN I view the UV index
 // THEN I am presented with a color that indicates whether the conditions are favorable, moderate, or severe
 
 
 // WHEN I view future weather conditions for that city
 // THEN I am presented with a 5-day forecast that displays the date, an icon representation of weather conditions, the temperature, and the humidity
-
-
-// WHEN I click on a city in the search history
-// THEN I am again presented with current and future conditions for that city
