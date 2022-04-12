@@ -91,6 +91,11 @@ body {
     background: var(--text_med);
 }
 
+.forecast-head {
+    font-size: 20px;
+    padding-right: 10px;
+}
+
 
 /* Small devices (landscape phones, 576px and up) */
 

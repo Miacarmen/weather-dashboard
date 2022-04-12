@@ -68,12 +68,6 @@ searchBtn.addEventListener('click', function(event) {
 
 
 
-// WHEN I view current weather conditions for that city
-// THEN I am presented with the city name, the date, an icon (current.weather.icon OR daily.weather.icon)  representation of weather conditions, the temperature, the humidity, the wind speed, and the UV index
-
-
-
-
 // FORECAST
 // daily.temp, daily.humidity, daily.wind_speed, daily.uvi
 var forecastContainer = document.querySelector('.forecast-container'),
@@ -94,13 +88,19 @@ function forecast(lat, lon) {
         .then(function(data) {
             console.log(data);
 
-            forecastContainer.querySelector('.for-temp').textContent = 'Temperature: ' + data.daily[1].temp.day;
+            forecastContainer.querySelector('.for-daytemp').textContent = 'AM Temperature: ' + data.daily[1].temp.day;
+
+            forecastContainer.querySelector('.for-nighttemp').textContent = 'PM Temperature: ' + data.daily[1].temp.night;
+
             forecastContainer.querySelector('.for-wind').textContent = 'Wind Speed: ' + data.daily[1].wind_speed;
+
             forecastContainer.querySelector('.for-humidity').textContent = 'Humidity: ' + data.daily[1].humidity;
+
             forecastContainer.querySelector('.for-uvIndex').textContent = 'UV Index: ' + data.daily[1].uvi;
 
 
             // for loop to display only 5 days
+
             // create forecast cards inside loop
             // append card to html
 
